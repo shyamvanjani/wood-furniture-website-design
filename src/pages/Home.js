@@ -74,23 +74,14 @@ const Home = () => {
       <section className="hero">
         <div className="hero-background"></div>
         <div className="container">
-          <div className="hero-content">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="hero-badge"
-            >
-              🏆 Award Winning Craftsmanship
-            </motion.div>
-            
+          <div className="hero-content">            
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Where <span className="highlight">Modern Design</span> Meets
-              <br />Timeless <span className="highlight">Wood Craftsmanship</span>
+              Made <span className="highlight">To Order</span> Furniture
+              <br />for <span className="highlight">Modern Living</span>
             </motion.h1>
             
             <motion.p
@@ -99,8 +90,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="hero-subtitle"
             >
-              Experience the perfect blend of contemporary aesthetics and traditional 
-              woodworking artistry. Each piece tells a story of passion and precision.
+              Experience custom-crafted furniture designed to fit your lifestyle and space, combining durability, comfort, and elegant craftsmanship.
             </motion.p>
             
             <motion.div

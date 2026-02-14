@@ -3,21 +3,6 @@ import { motion } from 'framer-motion';
 import './style/Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-    service: 'general'
-  });
-
-  const [formStatus, setFormStatus] = useState({
-    submitted: false,
-    submitting: false,
-    error: null
-  });
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,14 +21,6 @@ const Contact = () => {
       transition: { duration: 0.6 }
     }
   };
-
-  const services = [
-    { value: 'general', label: 'General Inquiry', icon: '💬' },
-    { value: 'design', label: 'Design Consultation', icon: '🎨' },
-    { value: 'quote', label: 'Get a Quote', icon: '💰' },
-    { value: 'restoration', label: 'Restoration', icon: '🛠️' },
-    { value: 'support', label: 'Customer Support', icon: '🆘' }
-  ];
 
   const contactInfo = [
     {
@@ -71,41 +48,6 @@ const Contact = () => {
       color: 'var(--light-brown)'
     }
   ];
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormStatus({ ...formStatus, submitting: true });
-    
-    // Simulate API call
-    setTimeout(() => {
-      setFormStatus({
-        submitted: true,
-        submitting: false,
-        error: null
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        service: 'general'
-      });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setFormStatus(prev => ({ ...prev, submitted: false }));
-      }, 5000);
-    }, 1500);
-  };
 
   return (
     <div className="contact">
@@ -187,148 +129,6 @@ const Contact = () => {
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="contact-form-section">
-        <div className="container">
-          <div className="form-wrapper">
-            <motion.div 
-              className="form-header"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="section-title">Send Us a <span className="highlight">Message</span></h2>
-              <p className="form-subtitle">
-                Fill out the form below and we'll get back to you within 24 hours
-              </p>
-            </motion.div>
-
-            {formStatus.submitted ? (
-              <motion.div 
-                className="success-message"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-              >
-                <div className="success-icon">✓</div>
-                <h3>Thank You!</h3>
-                <p>Your message has been sent successfully. We'll get back to you soon.</p>
-              </motion.div>
-            ) : (
-              <motion.form 
-                onSubmit={handleSubmit}
-                className="contact-form"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="subject">Subject *</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      placeholder="What is this regarding?"
-                    />
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label>Service Interested In</label>
-                  <div className="service-options">
-                    {services.map((service) => (
-                      <motion.div
-                        key={service.value}
-                        className={`service-option ${formData.service === service.value ? 'active' : ''}`}
-                        onClick={() => setFormData({ ...formData, service: service.value })}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <span className="service-icon">{service.icon}</span>
-                        <span className="service-label">{service.label}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Your Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    placeholder="Tell us about your project or inquiry..."
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="btn btn-secondary submit-btn"
-                  disabled={formStatus.submitting}
-                  whileHover={{ scale: formStatus.submitting ? 1 : 1.05 }}
-                  whileTap={{ scale: formStatus.submitting ? 1 : 0.95 }}
-                >
-                  {formStatus.submitting ? (
-                    <>
-                      <span className="spinner"></span>
-                      Sending...
-                    </>
-                  ) : (
-                    'Send Message'
-                  )}
-                </motion.button>
-              </motion.form>
-            )}
-          </div>
         </div>
       </section>
 
