@@ -1,11 +1,11 @@
 .services-hero {
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 150px 0 100px;
+  padding: 100px 0 60px;
   background: linear-gradient(135deg, var(--light-beige) 0%, rgba(245, 245, 220, 0.9) 100%);
 }
 
@@ -181,7 +181,7 @@
 
 
 .services-grid-section {
-  padding: 120px 0;
+  padding: 20px 0;
   background-color: var(--white);
 }
 
@@ -277,7 +277,7 @@
 }
 
 .process-section {
-  padding: 120px 0;
+  padding: 60px 0;
   background: linear-gradient(135deg, var(--light-beige) 0%, rgba(245, 245, 220, 0.7) 100%);
 }
 

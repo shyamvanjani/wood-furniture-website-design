@@ -141,7 +141,7 @@ const Services = () => {
           <div className="service-intro-card">
 
             {/* Badge centered on top */}
-            <div className="intro-badge">OUR SERVICE</div>
+            <div className="intro-badge">What We Offer</div>
 
             <div className="service-intro-wrapper">
 

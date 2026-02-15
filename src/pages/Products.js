@@ -360,7 +360,7 @@ const Products = () => {
                     </div>
                     
                     <div className="product-footer">
-                      <div className="product-price">{product.price}</div>
+                      {/* <div className="product-price">{product.price}</div> */}
                       <motion.button 
                         className="btn add-to-cart"
                         whileHover={{ scale: 1.05 }}
@@ -427,17 +427,6 @@ const Products = () => {
                     boxShadow: "0 25px 40px -15px rgba(139, 69, 19, 0.4)"
                   }}
                 >
-                  {quickView.featured && (
-                    <motion.div 
-                      className="image-badge-simple"
-                      initial={{ x: -50, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.3, type: "spring" }}
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      ⭐ Featured
-                    </motion.div>
-                  )}
                   
                   <motion.div 
                     className="image-main-simple"
