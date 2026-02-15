@@ -112,16 +112,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="hero-content"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-badge"
-            >
-              🏆 Premium Services
-            </motion.div>
-            
+          >            
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -142,52 +133,51 @@ const Services = () => {
             </motion.p>
           </motion.div>
         </div>
-        
-        <motion.div 
-          className="scroll-down"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="scroll-text">Explore Services</span>
-          <div className="scroll-line"></div>
-        </motion.div>
       </section>
-
       {/* Service Introduction Section */}
       <section className="service-intro-section">
         <div className="container">
-          <motion.div 
-            className="service-intro-content"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.div 
-              className="intro-badge"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              OUR SERVICE
-            </motion.div>
-            
-            <motion.p 
-              className="intro-description"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              We offer custom made furniture solutions for residential, commercial, 
-              and office spaces. From design and material selection to manufacturing 
-              and installation, every piece is crafted to match the client's needs, 
-              ensuring quality, functionality, and long lasting durability.
-            </motion.p>
-          </motion.div>
+
+          <div className="service-intro-card">
+
+            {/* Badge centered on top */}
+            <div className="intro-badge">OUR SERVICE</div>
+
+            <div className="service-intro-wrapper">
+
+              {/* Image */}
+              <motion.div
+                className="service-intro-image"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <img src="/images/services.png" alt="Furniture Services" />
+              </motion.div>
+
+              {/* Text */}
+              <motion.div
+                className="service-intro-content"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <p className="intro-description">
+                  We offer custom made furniture solutions for residential, commercial,
+                  and office spaces. From design and material selection to manufacturing
+                  and installation, every piece is crafted to match the client's needs,
+                  ensuring quality, functionality, and long lasting durability.
+                </p>
+              </motion.div>
+
+            </div>
+          </div>
+
         </div>
       </section>
+
 
       {/* Services Grid */}
       <section className="services-grid-section">
@@ -230,20 +220,20 @@ const Services = () => {
                 </motion.div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <motion.div 
+                {/* <motion.div 
                   className="service-learn-more"
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
                 >
                   Learn More →
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Process Tabs */}
+      {/* Process Tabs
       <section className="process-section">
         <div className="container">
           <motion.div 
@@ -309,9 +299,9 @@ const Services = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* CTA Section */}
+      {/* CTA Section
       <section className="services-cta">
         <div className="container">
           <motion.div 
@@ -341,7 +331,7 @@ const Services = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
