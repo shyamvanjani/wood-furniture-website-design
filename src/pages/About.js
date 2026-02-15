@@ -49,11 +49,11 @@ const About = () => {
       role: 'Founder',
       experience: 'Leadership & Expertise'
     },
-    {
-      name: 'Design Team',
-      role: 'Furniture Planning & Customization',
-      experience: 'Space-focused Designs'
-    },
+    // {
+    //   name: 'Design Team',
+    //   role: 'Furniture Planning & Customization',
+    //   experience: 'Space-focused Designs'
+    // },
     {
       name: 'Craftsmen Team',
       role: 'Manufacturing & Installation',
