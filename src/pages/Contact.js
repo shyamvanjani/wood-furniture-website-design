@@ -152,7 +152,7 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          {/* <motion.div 
             className="map-wrapper"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -172,26 +172,49 @@ const Contact = () => {
                       Office: 13 Radha Raman Shopping Center, Dharni Dhar, Paldi
                     </span>
                   </div>
-
-                  <div className="info-item">
-                    <span className="info-label">Hours:</span>
-                    <span className="info-value">
-                      Mon-Sat: 9:00 AM - 7:00 PM, Sunday: Closed
-                    </span>
-                  </div>
-                  
-                  <div className="info-item">
-                    <span className="info-label">Visit:</span>
-                    <span className="info-value">
-                      Site visits and consultations by appointment
-                    </span>
-                  </div>
-
                 </div>
               </div>
             </div>
           </div>
-          </motion.div>
+          </motion.div> */}
+
+          <motion.div 
+  className="map-wrapper"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  <div className="map-placeholder">
+    
+    {/* Left Side - Map */}
+    <div className="map-left">
+      <iframe
+        title="Gajjar Furnitures Location"
+        src="https://www.google.com/maps?q=22.971822525256506,72.56182765637497&z=16&output=embed"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    {/* Right Side - Address */}
+    <div className="map-content">
+      <div className="location-details">
+        <h3>Gajjar Furnitures Workshop & Office</h3>
+        <div className="location-info">
+          <div className="info-item">
+            <span className="info-label">Address:</span>
+            <span className="info-value">
+              Workshop: 32 Nanu kaka Estate, Narol to Piplaj Road, Narol 382405 <br/>
+              Office: 13 Radha Raman Shopping Center, Dharni Dhar, Paldi
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</motion.div>
+
         </div>
       </section>
 
