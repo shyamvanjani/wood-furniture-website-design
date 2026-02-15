@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import './style/Services.css';
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState('design');
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,43 +61,43 @@ const Services = () => {
     }
   ];
 
-  const tabs = [
-    { id: 'design', label: 'Design Process', icon: '✏️' },
-    { id: 'production', label: 'Production', icon: '⚙️' },
-    { id: 'delivery', label: 'Delivery', icon: '📦' },
-    { id: 'support', label: 'Support', icon: '🛠️' }
-  ];
+  // const tabs = [
+  //   { id: 'design', label: 'Design Process', icon: '✏️' },
+  //   { id: 'production', label: 'Production', icon: '⚙️' },
+  //   { id: 'delivery', label: 'Delivery', icon: '📦' },
+  //   { id: 'support', label: 'Support', icon: '🛠️' }
+  // ];
 
-  const processSteps = {
-    design: [
-      'Initial Consultation & Vision',
-      'Design Concept Development',
-      '3D Visualization & Planning',
-      'Material Selection',
-      'Final Design Approval'
-    ],
-    production: [
-      'Wood Selection & Preparation',
-      'Precision Cutting & Joinery',
-      'Assembly & Construction',
-      'Sanding & Surface Preparation',
-      'Finishing & Detailing'
-    ],
-    delivery: [
-      'Quality Inspection',
-      'Professional Packaging',
-      'Scheduled Delivery',
-      'Professional Installation',
-      'Final Setup & Adjustments'
-    ],
-    support: [
-      'Post-Installation Check',
-      'Maintenance Guidance',
-      'Warranty Registration',
-      'Repair Services',
-      'Future Upgrades'
-    ]
-  };
+  // const processSteps = {
+  //   design: [
+  //     'Initial Consultation & Vision',
+  //     'Design Concept Development',
+  //     '3D Visualization & Planning',
+  //     'Material Selection',
+  //     'Final Design Approval'
+  //   ],
+  //   production: [
+  //     'Wood Selection & Preparation',
+  //     'Precision Cutting & Joinery',
+  //     'Assembly & Construction',
+  //     'Sanding & Surface Preparation',
+  //     'Finishing & Detailing'
+  //   ],
+  //   delivery: [
+  //     'Quality Inspection',
+  //     'Professional Packaging',
+  //     'Scheduled Delivery',
+  //     'Professional Installation',
+  //     'Final Setup & Adjustments'
+  //   ],
+  //   support: [
+  //     'Post-Installation Check',
+  //     'Maintenance Guidance',
+  //     'Warranty Registration',
+  //     'Repair Services',
+  //     'Future Upgrades'
+  //   ]
+  // };
 
   return (
     <div className="services">

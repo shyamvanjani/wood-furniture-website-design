@@ -4,7 +4,6 @@ import './style/Products.css';
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('featured');
   const [quickView, setQuickView] = useState(null);
 
   const containerVariants = {
