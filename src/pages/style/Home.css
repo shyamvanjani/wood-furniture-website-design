@@ -1,5 +1,5 @@
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,7 +328,7 @@
 }
 
 .cta-section {
-  padding: 120px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, var(--primary-brown), var(--dark-brown));
   position: relative;
   overflow: hidden;

@@ -42,20 +42,20 @@ const Navbar = () => {
     >
       <div className="container">
         <div className="navbar-content">
-          <Link to="/" className="logo" onClick={closeMenu}>
-            <motion.div 
-              className="logo-icon"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-            >
-              🪚
-            </motion.div>
-            <div className="logo-text">
-              <h1>GAJJAR FURNITURES</h1>
-              <span>Modern Wood Artistry</span>
-            </div>
-          </Link>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <motion.div
+            className="logo-icon"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img src="/images/logo.png" alt="Gajjar Furnitures Logo" />
+          </motion.div>
 
+          <div className="logo-text">
+            <h1>GAJJAR FURNITURES</h1>
+            <span>All Kind of Furniture Contractor</span>
+          </div>
+        </Link>
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             {navItems.map((item, index) => (
               <motion.div

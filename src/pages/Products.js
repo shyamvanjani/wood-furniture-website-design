@@ -6,7 +6,6 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
   const [quickView, setQuickView] = useState(null);
-  const [quantity, setQuantity] = useState(1);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,19 +31,11 @@ const Products = () => {
   };
 
   const categories = [
-    { id: 'all', name: 'All Products', icon: '✨', count: 9 },
-    { id: 'dining', name: 'Dining Room', icon: '🍽️', count: 3 },
+    { id: 'all', name: 'All Products', icon: '✨', count: 12 },
+    { id: 'dining', name: 'Dining Room', icon: '🍽️', count: 4 },
     { id: 'bedroom', name: 'Bedroom', icon: '🛏️', count: 2 },
-    { id: 'living', name: 'Living Room', icon: '🛋️', count: 2 },
+    { id: 'living', name: 'Living Room', icon: '🛋️', count: 4 },
     { id: 'office', name: 'Home Office', icon: '💼', count: 2 }
-  ];
-
-  const sortOptions = [
-    { id: 'featured', label: 'Featured' },
-    { id: 'price-low', label: 'Price: Low to High' },
-    { id: 'price-high', label: 'Price: High to Low' },
-    { id: 'newest', label: 'Newest First' },
-    { id: 'popular', label: 'Most Popular' }
   ];
 
   const products = [
@@ -216,32 +207,12 @@ const Products = () => {
 
   const openQuickView = (product) => {
     setQuickView(product);
-    setQuantity(1);
     document.body.style.overflow = 'hidden';
   };
 
   const closeQuickView = () => {
     setQuickView(null);
     document.body.style.overflow = 'auto';
-  };
-
-  const increaseQuantity = () => {
-    setQuantity(prev => Math.min(10, prev + 1));
-  };
-
-  const decreaseQuantity = () => {
-    setQuantity(prev => Math.max(1, prev - 1));
-  };
-
-  const handleQuantityChange = (e) => {
-    const value = parseInt(e.target.value) || 1;
-    setQuantity(Math.min(10, Math.max(1, value)));
-  };
-
-  const calculateTotalPrice = () => {
-    if (!quickView) return '$0';
-    const price = parseInt(quickView.price.replace('$', '').replace(',', ''));
-    return `$${(price * quantity).toLocaleString()}`;
   };
 
   return (
@@ -407,7 +378,7 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Quick View Modal */}
+      {/* Simplified Quick View Modal - Only Image, Title & Category */}
       <AnimatePresence>
         {quickView && (
           <motion.div 
@@ -418,159 +389,112 @@ const Products = () => {
             onClick={closeQuickView}
           >
             <motion.div 
-              className="modal-content"
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
+              className="modal-content-simple"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ 
+                type: "spring",
+                damping: 25,
+                stiffness: 300
+              }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button className="modal-close" onClick={closeQuickView} aria-label="Close">
-                ✕
+              <button className="modal-close-simple" onClick={closeQuickView} aria-label="Close">
+                <motion.span
+                  initial={{ rotate: 0 }}
+                  whileHover={{ rotate: 90 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  ✕
+                </motion.span>
               </button>
               
-              <div className="modal-grid">
-                <div className="modal-image">
+              <div className="modal-simple">
+                {/* Image Container with Hover Effects */}
+                <motion.div 
+                  className="modal-image-simple"
+                  initial={{ scale: 0.9 }}
+                  animate={{ scale: 1 }}
+                  transition={{ 
+                    type: "spring",
+                    damping: 20,
+                    stiffness: 200,
+                    delay: 0.1
+                  }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 25px 40px -15px rgba(139, 69, 19, 0.4)"
+                  }}
+                >
                   {quickView.featured && (
-                    <div className="image-badge">
+                    <motion.div 
+                      className="image-badge-simple"
+                      initial={{ x: -50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.3, type: "spring" }}
+                      whileHover={{ scale: 1.1 }}
+                    >
                       ⭐ Featured
-                    </div>
+                    </motion.div>
                   )}
-                  <div 
-                    className="image-main"
+                  
+                  <motion.div 
+                    className="image-main-simple"
                     style={{ backgroundImage: `url(${quickView.image})` }}
                     aria-label={`Image of ${quickView.name}`}
-                  />
-                </div>
-                
-                <div className="modal-details">
-                  <div className="modal-header">
-                    <div className="modal-category">
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {/* Shine effect overlay */}
+                    <motion.div 
+                      className="image-shine"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: '100%' }}
+                      transition={{ duration: 0.8 }}
+                    />
+                  </motion.div>
+                </motion.div>
+
+                {/* Title and Category with Animations */}
+                <motion.div 
+                  className="modal-info-simple"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  <motion.div 
+                    className="modal-category-simple"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ 
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      delay: 0.3 
+                    }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: [0, -5, 5, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <span className="category-icon-simple">
                       {categories.find(c => c.id === quickView.category)?.icon}
-                      {quickView.category}
-                    </div>
-                    <h2>{quickView.name}</h2>
-                    
-                    <div className="modal-price-container">
-                      <div className="modal-price">{quickView.price}</div>
-                      <span className="price-savings">Free Shipping</span>
-                    </div>
-                    
-                    <div className="modal-rating">
-                      <span className="stars">★★★★★</span>
-                      <span className="rating">{quickView.rating}</span>
-                      <span className="reviews">({quickView.reviews} reviews)</span>
-                    </div>
-                    
-                    <p className="modal-description">{quickView.description}</p>
-                  </div>
+                    </span>
+                    <span>{quickView.category}</span>
+                  </motion.div>
                   
-                  <div className="modal-specs">
-                    <h4>📋 Specifications</h4>
-                    <div className="specs-grid">
-                      <div className="spec-item">
-                        <span className="spec-label">📍 Material</span>
-                        <span className="spec-value">{quickView.material}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="spec-label">📐 Dimensions</span>
-                        <span className="spec-value">{quickView.dimensions}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="spec-label">⚖️ Weight</span>
-                        <span className="spec-value">{quickView.weight}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="spec-label">📦 Delivery</span>
-                        <span className="spec-value">{quickView.delivery}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="spec-label">🛡️ Warranty</span>
-                        <span className="spec-value">{quickView.warranty}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="spec-label">⭐ Rating</span>
-                        <span className="spec-value">{quickView.rating}/5</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="modal-additional-info">
-                    <div className="info-grid">
-                      <div className="info-item">
-                        <div className="info-icon">🚚</div>
-                        <span className="info-label">Delivery</span>
-                        <span className="info-value">Free Shipping</span>
-                      </div>
-                      <div className="info-item">
-                        <div className="info-icon">🛡️</div>
-                        <span className="info-label">Warranty</span>
-                        <span className="info-value">Lifetime</span>
-                      </div>
-                      <div className="info-item">
-                        <div className="info-icon">↩️</div>
-                        <span className="info-label">Returns</span>
-                        <span className="info-value">30 Days</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="modal-actions">
-                    <div className="quantity-selector">
-                      <label className="quantity-label">Quantity:</label>
-                      <div className="quantity-controls">
-                        <motion.button 
-                          className="quantity-btn"
-                          onClick={decreaseQuantity}
-                          disabled={quantity <= 1}
-                          whileTap={{ scale: 0.9 }}
-                          aria-label="Decrease quantity"
-                        >
-                          -
-                        </motion.button>
-                        <input 
-                          type="number" 
-                          min="1" 
-                          max="10" 
-                          value={quantity}
-                          onChange={handleQuantityChange}
-                          className="quantity-input"
-                          aria-label="Quantity"
-                        />
-                        <motion.button 
-                          className="quantity-btn"
-                          onClick={increaseQuantity}
-                          disabled={quantity >= 10}
-                          whileTap={{ scale: 0.9 }}
-                          aria-label="Increase quantity"
-                        >
-                          +
-                        </motion.button>
-                      </div>
-                    </div>
-                    
-                    <div className="total-price">
-                      <span className="total-label">Total:</span>
-                      <span className="total-value">{calculateTotalPrice()}</span>
-                    </div>
-                    
-                    <div className="action-buttons">
-                      <motion.button 
-                        className="btn btn-secondary"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        Add to Cart
-                      </motion.button>
-                      <motion.button 
-                        className="btn btn-outline"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        Add to Wishlist
-                      </motion.button>
-                    </div>
-                  </div>
-                </div>
+                  <motion.h2 
+                    className="modal-title-simple"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.4 }}
+                  >
+                    {quickView.name}
+                  </motion.h2>
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>

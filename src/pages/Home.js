@@ -103,22 +103,22 @@ const Home = () => {
                 Explore Collection
                 <span className="btn-icon">→</span>
               </Link>
-              <Link to="/contact" className="btn btn-outline">
+              {/* <Link to="/contact" className="btn btn-outline">
                 <span className="play-icon">▶</span>
                 Virtual Tour
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
         </div>
         
-        <motion.div 
+        {/* <motion.div 
           className="hero-scroll-indicator"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           Scroll to explore
           <div className="scroll-line"></div>
-        </motion.div>
+        </motion.div> */}
       </section>
 
       {/* Features Section */}
