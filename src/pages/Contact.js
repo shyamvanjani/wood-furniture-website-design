@@ -25,29 +25,33 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: '📍',
-      title: 'Our Location',
-      details: ['123 Woodcraft Street', 'Furniture City, FC 12345'],
+      title: 'Our Locations',
+      details: [
+        'Workshop: 32 Nanu kaka Estate, Narol to Piplaj Road, Narol 382405',
+        'Office: 13 Radha Raman Shopping Center, Dharni Dhar, Paldi'
+      ],
       color: 'var(--primary-brown)'
     },
     {
       icon: '📞',
-      title: 'Contact Numbers',
-      details: ['Main: (123) 456-7890', 'Sales: (123) 456-7891'],
+      title: 'Contact Number',
+      details: ['+91 9824072093'],
       color: 'var(--dark-brown)'
     },
     {
       icon: '✉️',
-      title: 'Email Addresses',
-      details: ['info@timbercraft.com', 'sales@timbercraft.com'],
+      title: 'Email Address',
+      details: ['gajjarfurnitures@gmail.com'],
       color: 'var(--accent-gold)'
     },
     {
       icon: '🕒',
       title: 'Business Hours',
-      details: ['Mon-Fri: 9:00 AM - 6:00 PM', 'Saturday: 10:00 AM - 4:00 PM'],
-      color: 'var(--light-brown)'
+      details: ['Mon-Sat: 9:00 AM - 7:00 PM', 'Sunday: Closed'],
+      color: 'var(--primary-brown)'
     }
   ];
+  
 
   return (
     <div className="contact">
@@ -155,31 +159,38 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="map-placeholder">
-              <div className="map-content">
-                <div className="location-details">
-                  <h3>📍 TimberCraft Studio & Showroom</h3>
-                  <div className="location-info">
-                    <div className="info-item">
-                      <span className="info-label">Address:</span>
-                      <span className="info-value">123 Woodcraft Street, Furniture City</span>
-                    </div>
-                    <div className="info-item">
-                      <span className="info-label">Hours:</span>
-                      <span className="info-value">Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</span>
-                    </div>
-                    <div className="info-item">
-                      <span className="info-label">Parking:</span>
-                      <span className="info-value">Free onsite parking available</span>
-                    </div>
-                    <div className="info-item">
-                      <span className="info-label">Tour:</span>
-                      <span className="info-value">Showroom tours by appointment</span>
-                    </div>
+           <div className="map-placeholder">
+            <div className="map-content">
+              <div className="location-details">
+                <h3>📍 Gajjar Furnitures Workshop & Office</h3>
+                <div className="location-info">
+
+                  <div className="info-item">
+                    <span className="info-label">Address:</span>
+                    <span className="info-value">
+                      Workshop: 32 Nanu kaka Estate, Narol to Piplaj Road, Narol 382405 <br/>
+                      Office: 13 Radha Raman Shopping Center, Dharni Dhar, Paldi
+                    </span>
                   </div>
+
+                  <div className="info-item">
+                    <span className="info-label">Hours:</span>
+                    <span className="info-value">
+                      Mon-Sat: 9:00 AM - 7:00 PM, Sunday: Closed
+                    </span>
+                  </div>
+                  
+                  <div className="info-item">
+                    <span className="info-label">Visit:</span>
+                    <span className="info-value">
+                      Site visits and consultations by appointment
+                    </span>
+                  </div>
+
                 </div>
               </div>
             </div>
+          </div>
           </motion.div>
         </div>
       </section>

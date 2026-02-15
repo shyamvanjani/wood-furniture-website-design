@@ -8,18 +8,17 @@ const Footer = () => {
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
     { label: "Services", path: "/services" },
-    { label: "Portfolio", path: "/portfolio" },
     { label: "Products", path: "/products" },
     { label: "Contact Us", path: "/contact" },
   ];
 
   const footerSections = [
     {
-      title: "TimberCraft",
+      title: "Gajjar Furnitures",
       content: (
         <p className="footer-description">
-          Crafting timeless furniture with passion and precision since 1995.
-          Where tradition meets modern design.
+          All Kind of Furniture Contractor. We provide high-quality custom
+          furniture solutions with craftsmanship and precision.
         </p>
       ),
     },
@@ -44,16 +43,28 @@ const Footer = () => {
       content: (
         <ul className="contact-info">
           <li>
-            <span className="contact-icon">📍</span>
-            <span>123 Woodcraft Street, Furniture City</span>
+            <span className="contact-icon">📞</span>
+            <span>+91 9824072093</span>
           </li>
           <li>
-            <span className="contact-icon">📞</span>
-            <span>(123) 456-7890</span>
+            <span className="contact-icon">🌐</span>
+            <span>www.gajjarfurnitures.com</span>
           </li>
           <li>
             <span className="contact-icon">✉️</span>
-            <span>info@timbercraft.com</span>
+            <span>gajjarfurnitures@gmail.com</span>
+          </li>
+          <li>
+            <span className="contact-icon">📍</span>
+            <span>
+              Workshop: 32 Nanu kaka Estate, Narol to Piplaj Road, Narol 382405
+            </span>
+          </li>
+          <li>
+            <span className="contact-icon">📍</span>
+            <span>
+              Office: 13 Radha Raman Shopping Center, Dharni Dhar, Paldi
+            </span>
           </li>
         </ul>
       ),
@@ -63,10 +74,7 @@ const Footer = () => {
       content: (
         <ul>
           <li>
-            <strong>Mon-Fri:</strong> 9:00 AM - 6:00 PM
-          </li>
-          <li>
-            <strong>Saturday:</strong> 10:00 AM - 4:00 PM
+            <strong>Mon-Sat:</strong> 9:00 AM - 7:00 PM
           </li>
           <li>
             <strong>Sunday:</strong> Closed
@@ -75,7 +83,7 @@ const Footer = () => {
       ),
     },
   ];
-
+  
   return (
     <footer className="footer">
       <div className="container">
@@ -96,35 +104,10 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <div className="social-links">
-            {["Facebook", "Instagram", "Pinterest", "YouTube"].map(
-              (platform) => (
-                <motion.a
-                  key={platform}
-                  href="#"
-                  className="social-link"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {platform === "Facebook" && "📘"}
-                  {platform === "Instagram" && "📸"}
-                  {platform === "Pinterest" && "📌"}
-                  {platform === "YouTube" && "🎬"}
-                </motion.a>
-              )
-            )}
-          </div>
-
           <p className="copyright">
-            &copy; {new Date().getFullYear()} TimberCraft Furniture. All rights
+           &copy; {new Date().getFullYear()} Gajjar Furnitures. All rights reserved.
             reserved.
           </p>
-
-          <div className="footer-legal">
-            <a href="/contact">Privacy Policy</a>
-            <span className="separator">•</span>
-            <a href="/contact">Terms of Service</a>
-          </div>
         </div>
       </div>
 

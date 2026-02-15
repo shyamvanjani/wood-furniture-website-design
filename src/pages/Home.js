@@ -131,7 +131,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Why Choose TimberCraft
+            Why Choose Gajjar Furnitures
           </motion.h2>
           
           <motion.div 

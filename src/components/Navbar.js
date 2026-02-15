@@ -29,7 +29,6 @@ const Navbar = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
-    { path: '/portfolio', label: 'Portfolio' },
     { path: '/products', label: 'Products' },
     { path: '/contact', label: 'Contact Us' },
   ];
@@ -52,7 +51,7 @@ const Navbar = () => {
               🪚
             </motion.div>
             <div className="logo-text">
-              <h1>TimberCraft</h1>
+              <h1>GAJJAR FURNITURES</h1>
               <span>Modern Wood Artistry</span>
             </div>
           </Link>

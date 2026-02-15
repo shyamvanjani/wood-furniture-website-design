@@ -48,151 +48,167 @@ const Products = () => {
   ];
 
   const products = [
-    { 
-      id: 1, 
-      category: 'dining', 
-      name: 'Walnut Dining Table', 
-      description: 'Solid walnut table with extension leaves, featuring butterfly joints and a natural oil finish. Perfect for family gatherings and dinner parties.',
-      price: '$2,499',
-      material: 'Solid Walnut',
-      dimensions: '72" L × 42" W × 30" H',
-      weight: '120 lbs',
+    {
+      id: 1,
+      category: 'dining',
+      name: 'Classic Wooden Dining Setup',
+      description: 'Custom solid wood dining table with matching chairs crafted for durability and elegance.',
+      price: 'Custom Quote',
+      material: 'Solid Wood',
       featured: true,
-      image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      rating: 4.8,
-      reviews: 42,
-      delivery: '6-8 weeks',
-      warranty: 'Lifetime'
-    },
-    { 
-      id: 2, 
-      category: 'dining', 
-      name: 'Modern Dining Chairs', 
-      description: 'Set of 4 upholstered dining chairs with walnut frames and premium fabric. Ergonomic design with excellent back support.',
-      price: '$1,299',
-      material: 'Walnut & Fabric',
-      dimensions: '20" W × 22" D × 32" H',
-      weight: '25 lbs each',
-      featured: true,
-      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      rating: 4.7,
-      reviews: 38,
-      delivery: '4-6 weeks',
-      warranty: 'Lifetime'
-    },
-    { 
-      id: 3, 
-      category: 'bedroom', 
-      name: 'King Size Bed Frame', 
-      description: 'Solid oak bed frame with integrated storage and modern minimalist design. Includes under-bed drawer system.',
-      price: '$1,899',
-      material: 'Solid Oak',
-      dimensions: '76" W × 84" L × 30" H',
-      weight: '180 lbs',
-      featured: true,
-      image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: '/images/dining-1.png',
       rating: 4.9,
-      reviews: 56,
-      delivery: '8-10 weeks',
-      warranty: 'Lifetime'
+      reviews: 18
     },
-    { 
-      id: 4, 
-      category: 'bedroom', 
-      name: 'Dresser & Mirror', 
-      description: '6-drawer dresser with matching mirror in cherry wood with brass hardware. Features soft-close drawers.',
-      price: '$1,599',
-      material: 'Cherry Wood',
-      dimensions: '60" W × 20" D × 32" H',
-      weight: '95 lbs',
-      featured: false,
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80',
-      rating: 4.6,
-      reviews: 29,
-      delivery: '6-8 weeks',
-      warranty: 'Lifetime'
-    },
-    { 
-      id: 5, 
-      category: 'living', 
-      name: 'Leather Recliner', 
-      description: 'Handcrafted leather reclining chair with walnut base and premium cushioning. Features 360-degree swivel.',
-      price: '$1,299',
-      material: 'Full-grain Leather',
-      dimensions: '36" W × 40" D × 40" H',
-      weight: '85 lbs',
+  
+    {
+      id: 2,
+      category: 'dining',
+      name: 'Modern Marble Dining Table',
+      description: 'Premium marble top dining table with upholstered chairs for a modern luxury look.',
+      price: 'Custom Quote',
+      material: 'Marble & Wood',
       featured: true,
-      image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80',
+      image: '/images/dining-2.png',
       rating: 4.8,
-      reviews: 45,
-      delivery: '5-7 weeks',
-      warranty: 'Lifetime'
+      reviews: 14
     },
-    { 
-      id: 6, 
-      category: 'living', 
-      name: 'Coffee Table', 
-      description: 'Live edge walnut coffee table with steel legs and resin river design. Unique natural wood pattern.',
-      price: '$899',
-      material: 'Walnut & Steel',
-      dimensions: '48" L × 24" W × 18" H',
-      weight: '65 lbs',
-      featured: false,
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80',
-      rating: 4.7,
-      reviews: 32,
-      delivery: '4-6 weeks',
-      warranty: 'Lifetime'
-    },
-    { 
-      id: 7, 
-      category: 'office', 
-      name: 'Executive Desk', 
-      description: 'Large executive desk with cable management and built-in charging stations. Includes leather desk pad.',
-      price: '$1,799',
-      material: 'Maple Wood',
-      dimensions: '72" W × 36" D × 30" H',
-      weight: '150 lbs',
+  
+    {
+      id: 3,
+      category: 'bedroom',
+      name: 'Brick Wall Master Bedroom',
+      description: 'Custom bed frame with wardrobe and rustic brick wall interior finish.',
+      price: 'Custom Quote',
+      material: 'Teak Wood',
       featured: true,
-      image: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80',
+      image: '/images/bedroom-1.png',
       rating: 4.9,
-      reviews: 51,
-      delivery: '8-10 weeks',
-      warranty: 'Lifetime'
+      reviews: 22
     },
-    { 
-      id: 8, 
-      category: 'office', 
-      name: 'Bookshelf', 
-      description: 'Floor-to-ceiling adjustable bookshelf with integrated lighting. Features 8 adjustable shelves.',
-      price: '$1,199',
-      material: 'Birch Wood',
-      dimensions: '36" W × 12" D × 84" H',
-      weight: '110 lbs',
+    
+    {
+      id: 4,
+      category: 'bedroom',
+      name: 'Minimal Modern Bedroom',
+      description: 'Minimal style bedroom with clean furniture lines and warm lighting.',
+      price: 'Custom Quote',
+      material: 'Engineered Wood',
       featured: false,
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80',
-      rating: 4.6,
-      reviews: 27,
-      delivery: '6-8 weeks',
-      warranty: 'Lifetime'
-    },
-    { 
-      id: 9, 
-      category: 'dining', 
-      name: 'Bar Cabinet', 
-      description: 'Convertible bar cabinet with fold-out workspace and glass storage. Features LED interior lighting.',
-      price: '$1,499',
-      material: 'Mahogany & Glass',
-      dimensions: '42" W × 18" D × 72" H',
-      weight: '130 lbs',
-      featured: false,
-      image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: '/images/bedroom-2.png',
       rating: 4.7,
-      reviews: 34,
-      delivery: '7-9 weeks',
-      warranty: 'Lifetime'
+      reviews: 11
     },
+  
+    {
+      id: 5,
+      category: 'living',
+      name: 'Contemporary Sofa Setup',
+      description: 'Modern sofa set with custom center table and elegant lighting design.',
+      price: 'Custom Quote',
+      material: 'Fabric & Wood',
+      featured: true,
+      image: '/images/living-room-1.png',
+      rating: 4.8,
+      reviews: 20
+    },
+  
+    {
+      id: 6,
+      category: 'living',
+      name: 'Luxury Lounge Area',
+      description: 'Premium lounge seating with handcrafted tables and decorative interior.',
+      price: 'Custom Quote',
+      material: 'Leather & Wood',
+      featured: true,
+      image: '/images/living-room-2.png',
+      rating: 4.9,
+      reviews: 17
+    },
+  
+    {
+      id: 7,
+      category: 'living',
+      name: 'Garden View Living Room',
+      description: 'Bright living area with custom sofas and glass enclosure design.',
+      price: 'Custom Quote',
+      material: 'Fabric',
+      featured: false,
+      image: '/images/living-room-3.png',
+      rating: 4.7,
+      reviews: 12
+    },
+  
+    {
+      id: 8,
+      category: 'living',
+      name: 'Classic Sofa Interior',
+      description: 'Elegant living room with traditional sofa arrangement and rug styling.',
+      price: 'Custom Quote',
+      material: 'Fabric',
+      featured: false,
+      image: '/images/living-room-4.png',
+      rating: 4.7,
+      reviews: 9
+    },
+  
+    {
+      id: 9,
+      category: 'office',
+      name: 'Home Study Room',
+      description: 'Compact study setup with wooden desk and comfortable seating.',
+      price: 'Custom Quote',
+      material: 'Wood',
+      featured: true,
+      image: '/images/study-room-1.png',
+      rating: 4.8,
+      reviews: 13
+    },
+  
+    {
+      id: 10,
+      category: 'office',
+      name: 'Workspace Desk Setup',
+      description: 'Custom office desk with storage and ergonomic chair setup.',
+      price: 'Custom Quote',
+      material: 'Wood',
+      featured: false,
+      image: '/images/study-room-2.png',
+      rating: 4.7,
+      reviews: 8
+    },
+  
+    {
+      id: 11,
+      category: 'dining',
+      name: 'Designer Wooden Chairs',
+      description: 'Handcrafted designer chairs with woven seating and premium finish.',
+      price: 'Custom Quote',
+      material: 'Solid Wood',
+      featured: false,
+      image: '/images/chairs-1.png',
+      rating: 4.8,
+      reviews: 10
+    },
+
+    {
+      id: 12,
+      category: 'dining',
+      name: 'Traditional Wooden Dining Interior',
+      description: 'Handcrafted solid wood dining tables and chairs with classic finish. Designed for durability and timeless elegance, perfect for family dining spaces and traditional interiors.',
+      price: 'Custom Quote',
+      material: 'Solid Teak Wood',
+      dimensions: 'Custom Size Available',
+      weight: 'Custom',
+      featured: true,
+      image: '/images/dining-3.png', 
+      rating: 4.9,
+      reviews: 21,
+      delivery: '3-5 weeks',
+      warranty: '5 Years'
+    },    
   ];
+  
 
   const filteredProducts = selectedCategory === 'all' 
     ? products 
@@ -313,21 +329,6 @@ const Products = () => {
                 </motion.button>
               ))}
             </div>
-            
-            <div className="sort-controls">
-              <span className="sort-label">Sort by:</span>
-              <select 
-                className="sort-select"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-              >
-                {sortOptions.map(option => (
-                  <option key={option.id} value={option.id}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
         </div>
       </section>
@@ -351,13 +352,7 @@ const Products = () => {
                   variants={itemVariants}
                   whileHover="hover"
                   layout
-                >
-                  {product.featured && (
-                    <div className="featured-badge">
-                      ⭐ Featured
-                    </div>
-                  )}
-                  
+                >                
                   <div className="product-image-wrapper">
                     <div 
                       className="product-image"
@@ -374,25 +369,6 @@ const Products = () => {
                         </motion.button>
                       </div>
                     </div>
-                    
-                    <div className="product-actions">
-                      <motion.button 
-                        className="action-btn wishlist"
-                        whileHover={{ scale: 1.2, rotate: 5 }}
-                        whileTap={{ scale: 0.9 }}
-                        aria-label="Add to wishlist"
-                      >
-                        ♡
-                      </motion.button>
-                      <motion.button 
-                        className="action-btn compare"
-                        whileHover={{ scale: 1.2, rotate: -5 }}
-                        whileTap={{ scale: 0.9 }}
-                        aria-label="Compare product"
-                      >
-                        ⇄
-                      </motion.button>
-                    </div>
                   </div>
                   
                   <div className="product-info">
@@ -402,23 +378,13 @@ const Products = () => {
                     </div>
                     
                     <h3 className="product-name">{product.name}</h3>
-                    
-                    <div className="product-rating">
-                      <span className="stars">★★★★★</span>
-                      <span className="rating">{product.rating}</span>
-                      <span className="reviews">({product.reviews})</span>
-                    </div>
-                    
+
                     <p className="product-description">{product.description}</p>
                     
                     <div className="product-specs">
                       <div className="spec-item">
                         <span className="spec-label">Material:</span>
                         <span className="spec-value">{product.material}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="spec-label">Delivery:</span>
-                        <span className="spec-value">{product.delivery}</span>
                       </div>
                     </div>
                     

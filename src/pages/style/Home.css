@@ -270,20 +270,20 @@
   transition: transform 0.6s ease;
 }
 
-.product-card:hover .product-image {
+.product-card:hover .product-image {  
   transform: scale(1.1);
 }
 
 .product-image.dining {
-  background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-image: url('/public/images/dining-1.png');
 }
 
 .product-image.bedroom {
-  background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-image: url('/public/images/bedroom-1.png');
 }
 
 .product-image.living {
-  background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80');
+  background-image: url('/public/images/living-room-1.png');
 }
 
 .product-overlay {

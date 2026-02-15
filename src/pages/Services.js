@@ -153,6 +153,42 @@ const Services = () => {
         </motion.div>
       </section>
 
+      {/* Service Introduction Section */}
+      <section className="service-intro-section">
+        <div className="container">
+          <motion.div 
+            className="service-intro-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="intro-badge"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              OUR SERVICE
+            </motion.div>
+            
+            <motion.p 
+              className="intro-description"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              We offer custom made furniture solutions for residential, commercial, 
+              and office spaces. From design and material selection to manufacturing 
+              and installation, every piece is crafted to match the client's needs, 
+              ensuring quality, functionality, and long lasting durability.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="services-grid-section">
         <div className="container">

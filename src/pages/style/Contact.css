@@ -178,51 +178,61 @@
 }
 
 .map-placeholder {
-  height: 400px;
+  min-height: 420px;
   background: linear-gradient(135deg, var(--beige), var(--light-beige));
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
 }
 
 .map-content {
   text-align: center;
   padding: 40px;
-  max-width: 600px;
+  max-width: 750px;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .location-details h3 {
   font-size: 2rem;
   color: var(--dark-brown);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-weight: 800;
 }
 
+/* GRID UPDATED */
 .location-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   text-align: left;
 }
 
 .info-item {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  padding: 12px 14px;
+  background: var(--light-beige);
+  border-radius: 10px;
 }
 
 .info-label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-light);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .info-value {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--dark-brown);
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .faq-section {
@@ -336,6 +346,14 @@
   
   .map-placeholder {
     height: 350px;
+  }
+
+  .location-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-item:first-child {
+    grid-column: span 2; /* Address full width */
   }
 }
 
