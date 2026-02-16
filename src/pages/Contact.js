@@ -179,13 +179,14 @@ const Contact = () => {
                   <h3>Gajjar Furnitures Workshop & Office</h3>
                   <div className="location-info">
                     <div className="info-item">
-                      <span className="info-label">Address:</span>
-                      <span className="info-value">
+                      <div className="info-label">ADDRESS</div>
+                      <div className="info-value">
                         Workshop: 32 Nanu kaka Estate, Narol to Piplaj Road,
-                        Narol 382405 <br />
+                        Narol 382405
+                        <br />
                         Office: 13 Radha Raman Shopping Center, Dharni Dhar,
                         Paldi
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
