@@ -98,9 +98,6 @@ const Home = () => {
     target: galleryRef,
     offset: ["start end", "end start"],
   });
-  const galleryY1 = useTransform(galleryProgress, [0, 1], [80, -80]);
-  const galleryY2 = useTransform(galleryProgress, [0, 1], [-60, 60]);
-  const galleryY3 = useTransform(galleryProgress, [0, 1], [40, -40]);
 
   /* slide variants */
   const slideVariants = {
@@ -119,37 +116,6 @@ const Home = () => {
     exit: { opacity: 0, y: -40, transition: { duration: 0.4 } },
   };
 
-  /* data */
-  const features = [
-    {
-      icon: "🪚",
-      title: "Artisan Crafted",
-      description:
-        "Each piece is meticulously handcrafted by our skilled artisans with attention to every detail.",
-      // image: "/images/feature-artisan.jpg",
-    },
-    {
-      icon: "🌳",
-      title: "Sustainable Wood",
-      description:
-        "We use only responsibly sourced, high-quality wood from sustainable forests.",
-      // image: "/images/feature-wood.jpg",
-    },
-    {
-      icon: "⚙️",
-      title: "Custom Designs",
-      description:
-        "Create your dream furniture with our custom design service tailored to your space.",
-      // image: "/images/feature-custom.jpg",
-    },
-    {
-      icon: "🏆",
-      title: "Lifetime Warranty",
-      description:
-        "Our furniture comes with a lifetime warranty because we believe in lasting quality.",
-      // image: "/images/feature-warranty.jpg",
-    },
-  ];
 
   const products = [
     {
@@ -169,43 +135,6 @@ const Home = () => {
       description: "Comfortable and stylish living room furniture pieces",
       image: "/images/living-room-1.png",
       gallery: ["/images/living-2.jpg", "/images/living-3.jpg"],
-    },
-  ];
-
-  const galleryImages = [
-    { src: "/images/gallery-1.jpg", span: "tall" },
-    { src: "/images/gallery-2.jpg", span: "wide" },
-    { src: "/images/gallery-3.jpg", span: "normal" },
-    { src: "/images/gallery-4.jpg", span: "normal" },
-    { src: "/images/gallery-5.jpg", span: "tall" },
-    { src: "/images/gallery-6.jpg", span: "wide" },
-  ];
-
-  const processes = [
-    {
-      step: "01",
-      title: "Consultation",
-      description: "Share your vision and requirements with our design experts",
-      image: "/images/process-consultation.jpg",
-    },
-    {
-      step: "02",
-      title: "Design",
-      description: "Our team creates detailed 3D renders of your furniture",
-      image: "/images/process-design.jpg",
-    },
-    {
-      step: "03",
-      title: "Crafting",
-      description:
-        "Skilled artisans bring your design to life with premium materials",
-      image: "/images/process-crafting.jpg",
-    },
-    {
-      step: "04",
-      title: "Delivery",
-      description: "White-glove delivery and installation at your doorstep",
-      image: "/images/process-delivery.jpg",
     },
   ];
 
