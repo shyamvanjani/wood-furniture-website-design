@@ -94,11 +94,7 @@ const Home = () => {
 
   /* gallery section parallax */
   const galleryRef = useRef(null);
-  const { scrollYProgress: galleryProgress } = useScroll({
-    target: galleryRef,
-    offset: ["start end", "end start"],
-  });
-
+  
   /* slide variants */
   const slideVariants = {
     enter: (d) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0, scale: 1.1 }),
