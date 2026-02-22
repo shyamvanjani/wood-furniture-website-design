@@ -92,9 +92,7 @@ const Home = () => {
   });
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
-  /* gallery section parallax */
-  const galleryRef = useRef(null);
-  
+
   /* slide variants */
   const slideVariants = {
     enter: (d) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0, scale: 1.1 }),
