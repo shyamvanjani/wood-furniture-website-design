@@ -48,13 +48,13 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="/images/logo.png" alt="Gajjar Furnitures Logo" />
+            <img src="/images/logo-1.svg" alt="Gajjar Furnitures Logo" />
           </motion.div>
 
-          <div className="logo-text">
+          {/* <div className="logo-text">
             <h1>GAJJAR FURNITURES</h1>
             <span>All Kind of Furniture Contractor</span>
-          </div>
+          </div> */}
         </Link>
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             {navItems.map((item, index) => (
